@@ -13,16 +13,17 @@ $(() => {
 
     fontWeights.forEach(fontWeight => {
         fontStyles.forEach(fontStyle => {
-            const fontExampleBlock = $('<div/>');
-            const fontExampleDescription = $('<h3/>');
-            const fontExampleStyle = 'font-weight: ' + fontWeight + '; font-style: ' + fontStyle + ';';
-            fontExampleDescription.text(fontExampleStyle);
-            fontExampleDescription.addClass('font-example-description');
+            const fontExampleHeader = $('<div/>');
+            fontExampleHeader.addClass('font-example-header');
 
-            fontExampleBlock.addClass('font-weight-block');
+            const fontExampleStyle = 'font-weight: ' + fontWeight + '; font-style: ' + fontStyle + ';';
+            fontExampleHeader.text(fontExampleStyle);
+
+            const fontExampleBlock = $('<div/>');
+
+            fontExampleBlock.addClass('font-example-block');
             fontExampleBlock.css('font-weight', fontWeight);
             fontExampleBlock.css('font-style', fontStyle);
-            fontExampleBlock.append(fontExampleDescription);
 
             fontSizes.forEach(fontSize => {
                 const fontSizeBlock = $('<div/>');
@@ -42,6 +43,7 @@ $(() => {
                 fontSizeBlock.appendTo(fontExampleBlock);
             });
 
+            fontExampleHeader.appendTo(fontExampleContainer);
             fontExampleBlock.appendTo(fontExampleContainer);
         });
     });
