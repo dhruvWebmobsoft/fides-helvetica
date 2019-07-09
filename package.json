@@ -1,6 +1,6 @@
 {
     "name": "fides-helvetica",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Fides Helvetica Font",
     "license": "UNLICENSED",
     "private": true,
@@ -15,7 +15,7 @@
         "css-prefix": "postcss --config ./postcss.config.js --replace \"target/*.css\" \"!target/*.min.css\"",
         "css-lint": "stylelint --syntax scss \"src/scss/**/*.scss\"",
         "build-success": "echo \"Build successful ✓\u0007",
-        "webpack:dev": "npm run webpack-dev-server --config webpack/webpack.config.js --progress --inline --hot --profile --port=3060 --watch-content-base --color",
+		"webpack:dev": "webpack-dev-server --config webpack/webpack.config.js --progress --inline --hot --profile --port=3060 --watch-content-base --color",
         "start": "npm run webpack:dev",
         "serve": "npm run start"
     },
